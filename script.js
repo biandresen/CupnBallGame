@@ -20,10 +20,10 @@ let tries = 0;
 let playAgain;
 
 //AUDIO: PLAY AMBIENT
-ambientSound.play();
 ambientSound.volume = 0.2;
 ambientSound.loop = true;
 speakerIcon.addEventListener("click", function () {
+  ambientSound.play();
   ambientSound.muted = !ambientSound.muted; // Toggle muted state
 });
 
