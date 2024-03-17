@@ -1,4 +1,6 @@
 //VARIABLES
+const ambientSound = new Audio("./audio/ambientSoundTropical.mp3");
+const speakerIcon = document.getElementById("speakerIcon");
 const cup1 = document.getElementById("cup1");
 const cup2 = document.getElementById("cup2");
 const cup3 = document.getElementById("cup3");
@@ -9,13 +11,21 @@ let button = document.createElement("button");
 let removeClick = false;
 button.classList.add("playButton");
 button.textContent = "Play again";
-const positions = [305, 570, 840];
+const positions = [610, 880, 1150];
 let message = document.getElementById("message");
 let pointsDisplay = document.getElementById("pointsDisplay");
 let triesDisplay = document.getElementById("triesDisplay");
 let points = 0;
 let tries = 0;
 let playAgain;
+
+//AUDIO: PLAY AMBIENT
+ambientSound.play();
+ambientSound.volume = 0.2;
+ambientSound.loop = true;
+speakerIcon.addEventListener("click", function () {
+  ambientSound.muted = !ambientSound.muted; // Toggle muted state
+});
 
 //EVENT LISTENERS
 button.addEventListener("click", () => newGame());
@@ -43,7 +53,7 @@ function setBallPosition() {
   let position = Math.floor(Math.random() * 3);
   ball.style.position = "absolute";
   ball.style.left = positions[position] + "px";
-  ball.style.top = 500 + "px";
+  ball.style.top = 750 + "px";
 }
 
 function checkBall(chosenCup) {
