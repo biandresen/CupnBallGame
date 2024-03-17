@@ -20,7 +20,7 @@ let tries = 0;
 let playAgain;
 
 //AUDIO: PLAY AMBIENT
-ambientSound.volume = 0.2;
+ambientSound.volume = 0.4;
 ambientSound.loop = true;
 speakerIcon.addEventListener("click", function () {
   ambientSound.play();
